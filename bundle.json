@@ -1,0 +1,20 @@
+{
+    "edgeworker-version": "0.16.15",
+    "description": "A/B logic with JS data export and revised cookie/experiment management",
+    "misc": {
+        "0.16.15": "Tidied header values to conform to desired separation characters - pipe, semicolon.",
+        "0.16.14": "Adjusted math.random to 2 decimal places for conciseness.",
+        "0.16.13": "Fix to detect BMP JS path when JS itself is requested and PM allows EW to run on EMPTY_STRING extensions (paths do not match exactly).",
+        "0.16.10": "Minor fix to the BMP JS Path logic for ignoring session cookie.",
+        "0.16.9": "Added exclusion for BMP JS Path triggering onClientResponse due to PM match criteria set to EMPTY_STRING extensions",
+        "0.16.8": "Added onClientResponse for maintaining cache persistence of variants by setting cookie with EW instead.",
+        "0.16.7": "Added PM VAR to include in Cache ID Modification to handle variants of cached pages.",
+        "0.16.6": "Added header data for experiment options to origin.",
+        "0.16.5": "Bug fix for not resetting expURLfound bool upon experiment not triggering earlier in the loop.",
+        "0.16.4": "Changed no experiment triggered header signalling to maintain current cookie value for consistency through session.",
+        "0.16.3": "Updated exp 2 percentage threshold.",
+        "0.16.2": "Logging added for debugging.",
+        "0.16.1": "Updated cohort header to send the random value for the request assignment/persistence.",
+        "0.16.0": "Converted 0.15.12 to use simpler randomisation and cookie management."
+    }
+}
