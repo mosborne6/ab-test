@@ -1,7 +1,8 @@
 {
-    "edgeworker-version": "0.16.15",
+    "edgeworker-version": "0.16.16",
     "description": "A/B logic with JS data export and revised cookie/experiment management",
     "misc": {
+        "0.16.16": "Added new check url exists logic to handle wildcarded urls in experiments",
         "0.16.15": "Tidied header values to conform to desired separation characters - pipe, semicolon.",
         "0.16.14": "Adjusted math.random to 2 decimal places for conciseness.",
         "0.16.13": "Fix to detect BMP JS path when JS itself is requested and PM allows EW to run on EMPTY_STRING extensions (paths do not match exactly).",

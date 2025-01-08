@@ -97,8 +97,10 @@ export function onClientRequest(request) {
     request.setHeader('X-Experiment-Variant', arrExperimentVariants.join(';'));
     request.setHeader('X-Experiment-Options', arrExperimentOptions.join(';'));
     request.setHeader('X-Experiment-Cohort', randomValue.toString());
+
     request.setVariable('PMUSER_PAGE_VARIATION', arrExperimentVariants.join(';'));
     request.cacheKey.includeVariable('PMUSER_PAGE_VARIATION');
+
   } else {
     // no experiments triggered for this request - ask origin to maintain cookie value anyway to keep consistent experience for session.
     request.setHeader('X-Experiment-Cohort', randomValue.toString());
@@ -122,6 +124,22 @@ export function onClientResponse(request, response) {
   }
 }
 
+function experimentURLExists(req_url) {
+  for (const expURL of arrExperimentURLs) {
+    const regex = new RegExp('^' + expURL.replace(/\*/g, '.*') + '$');
+    if (regex.test(req_url.toLowerCase())) {
+      return true;
+    }
+  }
+  return false;
+  //return arrExperimentURLs.includes(req_url.toLowerCase());
+}
+
+
+
+
+
+
 // Some headers aren't safe to forward from the origin response through an EdgeWorker on to the client
 // For more information see the tech doc on create-response: https://techdocs.akamai.com/edgeworkers/docs/create-response
 export const UNSAFE_RESPONSE_HEADERS = ['content-length', 'transfer-encoding', 'connection', 'vary',
@@ -137,6 +155,3 @@ function getSafeResponseHeaders(headers) {
   return headers;
 }
 
-function experimentURLExists(req_url) {
-  return arrExperimentURLs.includes(req_url.toLowerCase());
-}
