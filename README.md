@@ -7,5 +7,5 @@ jsonLogicExtensions.js can accept additional extensions to augment logic/criteri
 ## TTLCache
 Used to allow the JS execution to temporarily cache the config.json file in memory for optimial performance.
 
-## Config.json
+## Config.json
 Responsible for defining experiments. Could be cached on a CDN too for added performance.
