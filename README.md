@@ -13,5 +13,5 @@ Responsible for defining experiments. Could be cached on a CDN too for added per
 ## Main.js & Bundle.json
 Base files used in an EdgeWorker.
 
-## Node_Modules
+## Node_Modules & _Virtual
 Imported Tesfy and related dependencies for ES6 usage.
