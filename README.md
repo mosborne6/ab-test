@@ -9,3 +9,9 @@ Used to allow the JS execution to temporarily cache the config.json file in memo
 
 ## Config.json
 Responsible for defining experiments. Could be cached on a CDN too for added performance.
+
+## Main.js & Bundle.json
+Base files used in an EdgeWorker.
+
+## Node_Modules
+Imported Tesfy and related dependencies for ES6 usage.
